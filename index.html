@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cafe & WiFi Finder</title>
+  <meta name="description" content="Find cafes with WiFi, power, AC, and more. Filter by amenities and rating." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>☕ Cafe & WiFi Finder</h1>
+    <p class="subtitle">Quickly find work-friendly cafes with the amenities you need.</p>
+  </header>
+
+  <section class="controls container">
+    <div class="row">
+      <div class="control">
+        <label for="search">Search</label>
+        <input id="search" type="text" placeholder="Search by cafe or location..." />
+      </div>
+
+      <div class="control">
+        <label for="minRating">Min Rating</label>
+        <select id="minRating">
+          <option value="0">Any</option>
+          <option value="3">3+</option>
+          <option value="3.5">3.5+</option>
+          <option value="4">4+</option>
+          <option value="4.5">4.5+</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label for="sortBy">Sort By</label>
+        <select id="sortBy">
+          <option value="relevance">Relevance</option>
+          <option value="ratingDesc">Rating (High → Low)</option>
+          <option value="ratingAsc">Rating (Low → High)</option>
+          <option value="priceAsc">Price (₹ → ₹₹₹)</option>
+          <option value="priceDesc">Price (₹₹₹ → ₹)</option>
+        </select>
+      </div>
+    </div>
+
+    <fieldset class="amenities">
+      <legend>Amenities</legend>
+      <label><input type="checkbox" value="wifi" checked /> WiFi</label>
+      <label><input type="checkbox" value="power" /> Power</label>
+      <label><input type="checkbox" value="ac" /> AC</label>
+      <label><input type="checkbox" value="outdoor" /> Outdoor</label>
+      <label><input type="checkbox" value="quiet" /> Quiet</label>
+    </fieldset>
+  </section>
+
+  <main class="container">
+    <div id="resultsCount" class="results-count"></div>
+    <div id="cards" class="grid"></div>
+    <div id="emptyState" class="empty" hidden>
+      <p>😕 No results. Try clearing some filters or searching a different term.</p>
+      <button id="clearFilters">Clear Filters</button>
+    </div>
+  </main>
+
+  <footer class="container footer">
+    <p>Built by <strong>Somesh Devana</strong> • <a href="https://github.com/someshdevana4" target="_blank" rel="noreferrer">GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
